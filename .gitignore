@@ -3,3 +3,5 @@ target/
 dbt_packages/
 logs/
 .DS_Store
+.gitignore
+ethalytics-53dcab02e467.p12
