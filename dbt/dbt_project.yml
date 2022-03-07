@@ -36,3 +36,15 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+seeds:
+  ethalytics:
+    +enabled: true
+    +schema: seed_data
+    known_eth_addresses:
+      +column_types:
+        id: integer
+        address: string
+        name: string
+    marketing:
+      +schema: marketing # this will take precedence

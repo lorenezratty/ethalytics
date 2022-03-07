@@ -9,9 +9,9 @@ rename as (
     select
         transaction_hash,
         transaction_index,
-        from_address,
-        to_address,
-        value * 0.000000000000000001 as value,
+        from_address                            as from_ethereum_address,
+        to_address                              as to_ethereum_address,
+        value,
         input,
         output,
         trace_type,

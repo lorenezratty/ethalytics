@@ -7,7 +7,7 @@ with source as (
 rename as (
 
     select
-        address,
+        address             as ethereum_address,
         symbol,
         name,
         decimals,

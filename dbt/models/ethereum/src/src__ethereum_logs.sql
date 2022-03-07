@@ -10,7 +10,7 @@ rename as (
         log_index,
         transaction_hash,
         transaction_index,
-        address,
+        address             as ethereum_address,
         data,
         topics,
         block_timestamp,

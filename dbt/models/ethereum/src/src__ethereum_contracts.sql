@@ -7,7 +7,7 @@ with source as (
 rename as (
 
     select
-        address,
+        address                 as ethereum_address,
         bytecode,
         function_sighashes,
         is_erc20,

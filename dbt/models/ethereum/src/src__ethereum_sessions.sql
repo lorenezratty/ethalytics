@@ -11,7 +11,7 @@ rename as (
         start_trace_id,
         start_block_number,
         start_block_timestamp,
-        wallet_address,
+        wallet_address          as ethereum_address,
         contract_address
 
     from source

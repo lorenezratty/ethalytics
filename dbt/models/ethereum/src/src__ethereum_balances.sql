@@ -7,8 +7,8 @@ with source as (
 rename as (
 
     select
-        address,
-        eth_balance
+        address                             as ethereum_address,
+        eth_balance / 1000000000000000000   as ethereum_balance
 
     from source
 
