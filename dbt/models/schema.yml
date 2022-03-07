@@ -1,0 +1,138 @@
+
+version: 2
+
+sources:
+  - name: public_bigquery
+    database: bigquery-public-data
+    schema: crypto_ethereum
+    tables:
+      - name: ethereum_amended_tokens
+        identifier: amended_tokens
+        columns:
+          - name: address
+          - name: symbol
+          - name: decimals
+      - name: ethereum_balances
+        identifier: balances
+        columns:
+          - name: address
+          - name: eth_balance
+      - name: ethereum_blocks
+        identifier: blocks
+        columns:
+          - name: timestamp
+          - name: number
+          - name: hash
+          - name: parent_hash
+          - name: nonce
+          - name: sha3_uncles
+          - name: logs_bloom
+          - name: transactions_root
+          - name: state_root
+          - name: receipts_root
+          - name: miner
+          - name: difficulty
+          - name: total_difficulty
+          - name: size
+          - name: extra_data
+          - name: gas_limit
+          - name: gas_used
+          - name: transaction_count
+          - name: base_fee_per_gas
+      - name: ethereum_contracts
+        identifier: contracts
+        columns:
+          - name: address
+          - name: bytecode
+          - name: function_sighashes
+          - name: is_erc20
+          - name: is_erc721
+          - name: block_timestamp
+          - name: block_number
+          - name: block_hash
+      - name: ethereum_logs
+        identifier: logs
+        columns:
+          - name: log_index
+          - name: transaction_hash
+          - name: transaction_index
+          - name: address
+          - name: data
+          - name: topics
+          - name: block_timestamp
+          - name: block_number
+          - name: block_hash
+      - name: ethereum_sessions
+        identifier: sessions
+        columns:
+          - name: id
+          - name: start_trace_id
+          - name: start_block_number
+          - name: start_block_timestamp
+          - name: wallet_address
+          - name: contract_address
+      - name: ethereum_token_transfers
+        identifier: token_transfers
+        columns:
+          - name: token_address
+          - name: from_address
+          - name: to_address
+          - name: value
+      - name: ethereum_tokens
+        identifier: tokens
+        columns:
+          - name: address
+          - name: symbol
+          - name: name
+          - name: decimals
+          - name: total_supply
+          - name: block_timestamp
+          - name: block_number
+          - name: block_hash
+      - name: ethereum_traces
+        identifier: traces
+        columns:
+          - name: transaction_hash
+          - name: transaction_index
+          - name: from_address
+          - name: to_address
+          - name: value
+          - name: input
+          - name: output
+          - name: trace_type
+          - name: call_type
+          - name: reward_type
+          - name: gas
+          - name: gas_used
+          - name: subtraces
+          - name: trace_address
+          - name: error
+          - name: status
+          - name: block_timestamp
+          - name: block_number
+          - name: block_hash
+          - name: trace_id
+      - name: ethereum_transactions
+        identifier: transactions
+        columns:
+          - name: hash
+          - name: nonce
+          - name: transaction_index
+          - name: from_address
+          - name: to_address
+          - name: value
+          - name: gas
+          - name: gas_price
+          - name: input
+          - name: receipt_cumulative_gas_used
+          - name: receipt_gas_used
+          - name: receipt_contract_address
+          - name: receipt_root
+          - name: receipt_status
+          - name: block_timestamp
+          - name: block_number
+          - name: block_hash
+          - name: max_fee_per_gas
+          - name: max_priority_fee_per_gas
+          - name: transaction_type
+          - name: receipt_effective_gas_price
