@@ -54,6 +54,8 @@ final as (
     left join sending_transactions using (ethereum_address)
     left join receiving_transactions using (ethereum_address)
 
+    order by 1
+
 )
 
 select * from final
