@@ -12,11 +12,13 @@ sources:
           - name: address
           - name: symbol
           - name: decimals
+
       - name: ethereum_balances
         identifier: balances
         columns:
           - name: address
           - name: eth_balance
+
       - name: ethereum_blocks
         identifier: blocks
         columns:
@@ -39,6 +41,7 @@ sources:
           - name: gas_used
           - name: transaction_count
           - name: base_fee_per_gas
+
       - name: ethereum_contracts
         identifier: contracts
         columns:
@@ -50,6 +53,7 @@ sources:
           - name: block_timestamp
           - name: block_number
           - name: block_hash
+
       - name: ethereum_logs
         identifier: logs
         columns:
@@ -62,6 +66,7 @@ sources:
           - name: block_timestamp
           - name: block_number
           - name: block_hash
+
       - name: ethereum_sessions
         identifier: sessions
         columns:
@@ -71,6 +76,7 @@ sources:
           - name: start_block_timestamp
           - name: wallet_address
           - name: contract_address
+
       - name: ethereum_token_transfers
         identifier: token_transfers
         columns:
@@ -78,6 +84,12 @@ sources:
           - name: from_address
           - name: to_address
           - name: value
+          - name: transaction_hash
+          - name: log_index
+          - name: block_timestamp
+          - name: block_number
+          - name: block_hash
+
       - name: ethereum_tokens
         identifier: tokens
         columns:
@@ -89,6 +101,7 @@ sources:
           - name: block_timestamp
           - name: block_number
           - name: block_hash
+
       - name: ethereum_traces
         identifier: traces
         columns:
@@ -112,6 +125,7 @@ sources:
           - name: block_number
           - name: block_hash
           - name: trace_id
+          
       - name: ethereum_transactions
         identifier: transactions
         columns:

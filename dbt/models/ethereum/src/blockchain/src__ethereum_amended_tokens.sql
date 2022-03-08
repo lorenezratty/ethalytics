@@ -8,8 +8,8 @@ rename as (
 
     select
         address     as ethereum_address,
-        symbol,
-        decimals
+        symbol      as token_symbol,
+        decimals    as num_token_decimals
 
     from source
 
