@@ -18,9 +18,9 @@ rename as (
         -- FOREIGN KEYS
         address                                         as ethereum_address,
         block_hash                                      as block_hash,
+        block_number                                    as block_number,
 
         -- METADATA
-        block_number                                    as block_number,
         datetime(block_timestamp, 'America/Chicago')    as created_at
 
     from source
