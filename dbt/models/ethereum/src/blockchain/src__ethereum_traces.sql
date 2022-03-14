@@ -7,26 +7,34 @@ with source as (
 rename as (
 
     select
-        transaction_hash,
-        transaction_index,
-        from_address                                    as from_ethereum_address,
-        to_address                                      as to_ethereum_address,
-        value / 1000000000000000000                     as value_transferred,
-        input,
-        output,
-        trace_type,
-        call_type,
-        reward_type,
+        -- PRIMARY DIMENSIONS
+        trace_id                                        as trace_id,
+
+        -- ADDITIONAL ATTRIBUTES
+        call_type                                       as call_type,
+        error                                           as error,
         gas / 1000000000000000000                       as gas,
         gas_used / 1000000000000000000                  as gas_used,
-        subtraces,
-        trace_address,
-        error,
-        status,
+        input                                           as input,
+        output                                          as output,
+        reward_type                                     as reward_type,
+        status                                          as status,
+        subtraces                                       as subtraces,
+        trace_address                                   as trace_address,
+        trace_type                                      as trace_type,
+        value / 1000000000000000000                     as value_transferred,
+
+        -- FOREIGN KEYS
+        block_number                                    as block_number,
+        block_hash                                      as block_hash,
+        from_address                                    as from_ethereum_address,
+        transaction_hash                                as transaction_hash,
+        transaction_index                               as transaction_index,
+        to_address                                      as to_ethereum_address,
+
+
+        -- METADATA
         datetime(block_timestamp, 'America/Chicago')    as created_at,
-        block_number                                    as created_on_block,
-        block_hash                                      as created_on_hash,
-        trace_id
 
     from source
 

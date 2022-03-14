@@ -7,7 +7,10 @@ with source as (
 rename as (
 
     select
+        -- PRIMARY DIMENSIONS
         address                             as ethereum_address,
+
+        -- ADDITIONAL ATTRIBUTES
         eth_balance / 1000000000000000000   as ethereum_balance
 
     from source

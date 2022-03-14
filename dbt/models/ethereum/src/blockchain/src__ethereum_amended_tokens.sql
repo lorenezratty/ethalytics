@@ -7,7 +7,10 @@ with source as (
 rename as (
 
     select
+        -- PRIMARY DIMENSIONS
         address     as ethereum_address,
+
+        -- ADDITIONAL ATTRIBUTES
         symbol      as token_symbol,
         decimals    as num_token_decimals
 

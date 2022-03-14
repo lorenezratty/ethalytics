@@ -14,8 +14,8 @@ rename as (
         data,
         topics,
         datetime(block_timestamp, 'America/Chicago')    as created_at,
-        block_number                                    as created_on_block,
-        block_hash                                      as created_on_hash
+        block_number                                    as block_number,
+        block_hash                                      as block_hash
 
     from source
 

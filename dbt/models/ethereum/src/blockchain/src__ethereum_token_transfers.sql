@@ -7,15 +7,22 @@ with source as (
 rename as (
 
     select
+        -- PRIMARY DIMENSIONS
         token_address                                   as token_ethereum_address,
         from_address                                    as from_ethereum_address,
         to_address                                      as to_ethereum_address,
+        
+        -- ADDITIONAL ATTRIBUTES
+        log_index                                       as log_index,
+        transaction_hash                                as transaction_hash,
         cast(value as numeric) / 1000000000000000000    as value_in_ethereum,
-        transaction_hash,
-        log_index,
-        datetime(block_timestamp, 'America/Chicago')    as created_at,
-        block_number                                    as created_on_block,
-        block_hash                                      as created_on_hash
+        
+        -- FOREIGN KEYS
+        block_hash                                      as block_hash,
+        block_number                                    as block_number,
+        
+        -- METADATA
+        datetime(block_timestamp, 'America/Chicago')    as created_at
 
     from source
 

@@ -7,14 +7,21 @@ with source as (
 rename as (
 
     select
-        address                                         as ethereum_address,
-        symbol                                          as token_symbol,
+        -- PRIMARY DIMENSIONS
         name                                            as token_name,
+        symbol                                          as token_symbol,
+        
+        -- ADDITIONAL ATTRIBUTES
         decimals                                        as num_token_decimals,
-        total_supply,
-        datetime(block_timestamp, 'America/Chicago')    as created_at,
-        block_number                                    as created_on_block,
-        block_hash                                      as created_on_hash
+        total_supply                                    as total_supply,
+
+        -- FOREIGN KEYS
+        address                                         as ethereum_address,
+        block_hash                                      as block_hash,
+
+        -- METADATA
+        block_number                                    as block_number,
+        datetime(block_timestamp, 'America/Chicago')    as created_at
 
     from source
 
