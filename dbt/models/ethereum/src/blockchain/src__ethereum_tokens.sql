@@ -16,12 +16,12 @@ rename as (
         total_supply                                    as total_supply,
 
         -- FOREIGN KEYS
-        address                                         as ethereum_address,
         block_hash                                      as block_hash,
         block_number                                    as block_number,
+        address                                         as ethereum_address,
 
         -- METADATA
-        datetime(block_timestamp, 'America/Chicago')    as created_at
+        datetime(block_timestamp, 'America/Chicago')    as block_created_at
 
     from source
 

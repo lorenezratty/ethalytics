@@ -1,0 +1,1 @@
+select * from {{ ref('prep__ethereum_blocks') }}

@@ -7,12 +7,19 @@ with source as (
 rename as (
 
     select
-        id,
-        start_trace_id,
-        start_block_number,
-        datetime(start_block_timestamp, 'America/Chicago')  as start_block_timestamp,
+        -- PRIMARY DIMENSIONS
+        id                                                  as session_id,
+
+        -- ADDITIONAL ATTRIBUTES
+        start_block_number                                  as start_block_number,
+
+        -- FOREIGN KEYS
+        contract_address                                    as contract_address,
         wallet_address                                      as ethereum_address,
-        contract_address
+        start_trace_id                                      as trace_id,
+
+        -- METADATA
+        datetime(start_block_timestamp, 'America/Chicago')  as start_block_timestamp
 
     from source
 

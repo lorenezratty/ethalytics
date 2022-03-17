@@ -15,9 +15,9 @@ balances as (
 receiving_transactions as (
 
     select
-        to_ethereum_address     as ethereum_address,
-        count(*)                as num_of_receiving_transactions,
-        sum(transaction_value)  as total_value_received
+        to_ethereum_address             as ethereum_address,
+        count(*)                        as num_of_receiving_transactions,
+        sum(transaction_value_in_eth)   as total_value_received
 
     from {{ ref('src__ethereum_transactions') }}
 
@@ -28,9 +28,9 @@ receiving_transactions as (
 sending_transactions as (
 
     select
-        from_ethereum_address   as ethereum_address,
-        count(*)                as num_of_sent_transactions,
-        sum(transaction_value)  as total_value_sent
+        from_ethereum_address           as ethereum_address,
+        count(*)                        as num_of_sent_transactions,
+        sum(transaction_value_in_eth)   as total_value_sent
 
     from {{ ref('src__ethereum_transactions') }}
 

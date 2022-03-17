@@ -1,6 +1,19 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
 with source as (
 
     select * from {{ source('public_bigquery', 'ethereum_blocks') }}
+
+    {% if is_incremental() %}
+
+    -- this filter will only be applied on an incremental run
+    where number > (select max(number) from {{ this }})
+
+    {% endif %}
 
 ),
 
@@ -33,7 +46,7 @@ rename as (
 
 
         -- METADATA
-        datetime(timestamp, 'America/Chicago')  as timestamp
+        datetime(timestamp, 'America/Chicago')  as block_created_at
 
     from source
 

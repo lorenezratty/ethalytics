@@ -7,15 +7,22 @@ with source as (
 rename as (
 
     select
-        log_index,
-        transaction_hash,
-        transaction_index,
-        address                                         as ethereum_address,
-        data,
-        topics,
-        datetime(block_timestamp, 'America/Chicago')    as created_at,
+        -- PRIMARY DIMENSIONS
+        log_index                                       as log_index,
+
+        -- ADDITIONAL ATTRIBUTES
+        data                                            as data,
+        topics                                          as topics,
+        transaction_index                               as transaction_index,
+
+        -- FOREIGN KEYS
+        block_hash                                      as block_hash,
         block_number                                    as block_number,
-        block_hash                                      as block_hash
+        address                                         as ethereum_address,
+        transaction_hash                                as transaction_hash,
+
+        -- METADATA
+        datetime(block_timestamp, 'America/Chicago')    as block_created_at
 
     from source
 

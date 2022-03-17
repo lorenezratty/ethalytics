@@ -7,14 +7,19 @@ with source as (
 rename as (
 
     select
-        address                                         as ethereum_address,
-        bytecode,
-        function_sighashes,
-        is_erc20,
-        is_erc721,
-        datetime(block_timestamp, 'America/Chicago')    as created_at,
+        -- PRIMARY DIMENSIONS
+        block_hash                                      as block_hash,
         block_number                                    as block_number,
-        block_hash                                      as block_hash
+        address                                         as ethereum_address,
+        
+        -- ADDITIONAL ATTRIBUTES
+        bytecode                                        as bytecode,
+        function_sighashes                              as function_sighashes,
+        is_erc20                                        as is_erc20,
+        is_erc721                                       as is_erc721,
+        
+        -- FOREIGN KEYS
+        datetime(block_timestamp, 'America/Chicago')    as block_created_at
 
     from source
 
