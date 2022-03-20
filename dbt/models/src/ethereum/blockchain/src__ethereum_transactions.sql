@@ -28,7 +28,7 @@ rename as (
         receipt_status                                      as status,
         transaction_type                                    as transaction_type,
         value / 1000000000000000000                         as transaction_value_in_eth,
-        
+
         -- FOREIGN KEYS
         block_hash                                          as block_hash,
         block_number                                        as block_number,
