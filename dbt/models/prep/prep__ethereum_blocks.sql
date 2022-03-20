@@ -159,7 +159,7 @@ final as (
         block_hash,
         block_number,
         base_fee_per_gas,
-        difficulty,
+        difficulty_in_th,
         extra_data,
         gas_limit,
         gas_used,
@@ -188,7 +188,7 @@ final as (
         receipts_root,
         transaction_count,
         transactions_root,
-        total_difficulty,
+        total_difficulty_in_th,
         miner_ethereum_address,
         parent_hash,
         block_created_at

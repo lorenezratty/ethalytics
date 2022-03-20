@@ -13,7 +13,7 @@ rename as (
 
         -- ADDITIONAL ATTRIBUTES
         base_fee_per_gas                        as base_fee_per_gas,
-        difficulty                              as difficulty,
+        difficulty / 1000000000000              as difficulty_in_th,
         extra_data                              as extra_data,
         gas_limit / 1000000000000000000         as gas_limit,
         gas_used / 1000000000000000000          as gas_used,
@@ -25,7 +25,7 @@ rename as (
         receipts_root                           as receipts_root,
         transaction_count                       as transaction_count,
         transactions_root                       as transactions_root,
-        total_difficulty                        as total_difficulty,
+        total_difficulty / 1000000000000        as total_difficulty_in_th,
 
         -- FOREIGN KEYS
         miner                                   as miner_ethereum_address,
