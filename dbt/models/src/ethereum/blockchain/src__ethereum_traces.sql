@@ -13,7 +13,7 @@ rename as (
         -- ADDITIONAL ATTRIBUTES
         call_type                                       as call_type,
         error                                           as error,
-        gas / 1000000000000000000                       as gas,
+        gas / 1000000000000000000                       as gas_limit,
         gas_used / 1000000000000000000                  as gas_used,
         input                                           as input,
         output                                          as output,

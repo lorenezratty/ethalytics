@@ -47,7 +47,7 @@ traces_agg as (
 
     select
         block_hash,
-        coalesce(sum(gas_limit), 0)               as sum_gas,
+        coalesce(avg(gas_limit), 0)         as avg_gas_limit,
         coalesce(sum(gas_used), 0)          as sum_gas_used,
         coalesce(sum(value_transferred), 0) as sum_trace_value_transferred
 
@@ -73,16 +73,21 @@ transactions_agg as (
 
     select
         block_hash,
-        coalesce(sum(gas), 0)                           as sum_transaction_gas,
-        coalesce(min(gas_price), 0)                     as min_transaction_gas_price,
-        coalesce(max(gas_price), 0)                     as max_transacrion_gas_price,
-        coalesce(max(max_fee_per_gas), 0)               as max_fee_per_gas,
-        coalesce(max(max_priority_fee_per_gas), 0)      as max_priority_fee_per_gas,
-        coalesce(sum(cumulative_gas_used), 0)           as sum_transaction_cumulative_gas_used,
-        coalesce(min(effective_gas_price), 0)           as min_effective_gas_price,
-        coalesce(max(effective_gas_price), 0)           as max_effective_gas_price,
-        coalesce(sum(gas_used), 0)                      as sum_transaction_gas_used,
-        coalesce(sum(transaction_value_in_eth), 0)      as sum_transaction_value_in_eth
+        coalesce(count(*) ,0)                               as num_transactions,
+        coalesce(avg(gas_in_gwei), 0)                       as avg_transaction_gas_in_gwei,
+        coalesce(max(gas_in_gwei), 0)                       as max_transaction_gas_in_gwei,
+        coalesce(min(gas_in_gwei), 0)                       as min_transaction_gas_in_gwei,
+        coalesce(min(gas_price_in_eth), 0)                  as min_transaction_gas_price_in_eth,
+        coalesce(max(gas_price_in_eth), 0)                  as max_transacrion_gas_price_in_eth,
+        coalesce(min(gas_price_in_gwei), 0)                 as min_transaction_gas_price_in_gwei,
+        coalesce(max(gas_price_in_gwei), 0)                 as max_transacrion_gas_price_in_gwei,
+        coalesce(max(max_fee_per_gas_in_gwei), 0)           as max_fee_per_gas_in_gwei,
+        coalesce(max(max_priority_fee_per_gas_in_gwei), 0)  as max_priority_fee_per_gas_in_gwei,
+        coalesce(sum(cumulative_gas_used), 0)               as sum_transaction_cumulative_gas_used,
+        coalesce(min(effective_gas_price), 0)               as min_effective_gas_price,
+        coalesce(max(effective_gas_price), 0)               as max_effective_gas_price,
+        coalesce(sum(gas_used), 0)                          as sum_transaction_gas_used,
+        coalesce(sum(transaction_value_in_eth), 0)          as sum_transaction_value_in_eth
 
     from transactions
 
@@ -163,27 +168,22 @@ final as (
         sha3_uncles,
         size_in_bytes,
         state_root,
-        
-        sum_gas,
-        sum_gas_used,
-        sum_trace_value_transferred,
-        num_tokens_created_on_block,
-        sum_transaction_gas,
-        min_transaction_gas_price,
-        max_transacrion_gas_price,
-        max_fee_per_gas,
-        max_priority_fee_per_gas,
-        sum_transaction_receipt_cumulative_gas_used,
-        min_receipt_effective_gas_price,
-        max_receipt_effective_gas_price,
-        sum_transaction_receipt_gas_used,
-        sum_transaction_value,
-        num_erc_20,
-        num_erc_721,
-        num_contracts,
-        num_logs,
-        -- num_token_transfers,
-        -- sum_value_in_ethereum,
+
+        num_transactions,
+        avg_transaction_gas_in_gwei,
+        max_transaction_gas_in_gwei,
+        min_transaction_gas_in_gwei,
+        min_transaction_gas_price_in_eth,
+        max_transacrion_gas_price_in_eth,
+        min_transaction_gas_price_in_gwei,
+        max_transacrion_gas_price_in_gwei,
+        max_fee_per_gas_in_gwei,
+        max_priority_fee_per_gas_in_gwei,
+        sum_transaction_cumulative_gas_used,
+        min_effective_gas_price,
+        max_effective_gas_price,
+        sum_transaction_gas_used,
+        sum_transaction_value_in_eth,
 
         receipts_root,
         transaction_count,
@@ -200,8 +200,6 @@ final as (
     left join contracts_agg         using (block_hash)
     left join logs_agg              using (block_hash)
     left join token_transfers_agg   using (block_hash)
-
-    order by block_created_at
 
 )
 

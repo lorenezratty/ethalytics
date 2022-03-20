@@ -36,7 +36,9 @@ models:
     # Config indicated by + and applies to all files under models/example/
     marts:
       +materialized: table
-    ethereum:
+    prep:
+      +materialized: view
+    src:
       +materialized: view
 
 seeds:
@@ -48,5 +50,3 @@ seeds:
         id: integer
         address: string
         name: string
-    marketing:
-      +schema: marketing # this will take precedence
