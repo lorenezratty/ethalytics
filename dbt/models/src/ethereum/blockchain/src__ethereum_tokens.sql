@@ -8,20 +8,20 @@ rename as (
 
     select
         -- PRIMARY DIMENSIONS
-        name                                            as token_name,
-        symbol                                          as token_symbol,
-        
+        name                                                as token_name,
+        symbol                                              as token_symbol,
+
         -- ADDITIONAL ATTRIBUTES
-        decimals                                        as num_token_decimals,
-        total_supply                                    as total_supply,
+        decimals                                            as num_token_decimals,
+        total_supply                                        as total_supply,
 
         -- FOREIGN KEYS
-        block_hash                                      as block_hash,
-        block_number                                    as block_number,
-        address                                         as ethereum_address,
+        block_hash                                          as block_hash,
+        block_number                                        as block_number,
+        address                                             as ethereum_address,
 
         -- METADATA
-        datetime(block_timestamp, 'America/Chicago')    as block_created_at
+        datetime(block_timestamp, 'American/Los Angeles')   as block_created_at
 
     from source
 
