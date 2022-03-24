@@ -8,18 +8,18 @@ rename as (
 
     select
         -- PRIMARY DIMENSIONS
-        id                                                  as session_id,
+        id                                                      as session_id,
 
         -- ADDITIONAL ATTRIBUTES
-        start_block_number                                  as start_block_number,
+        start_block_number                                      as start_block_number,
 
         -- FOREIGN KEYS
-        contract_address                                    as contract_address,
-        wallet_address                                      as ethereum_address,
-        start_trace_id                                      as trace_id,
+        contract_address                                        as contract_address,
+        wallet_address                                          as ethereum_address,
+        start_trace_id                                          as trace_id,
 
         -- METADATA
-        datetime(start_block_timestamp, 'American/Los Angeles')  as start_block_timestamp
+        datetime(start_block_timestamp, 'American/Los Angeles') as start_block_timestamp
 
     from source
 
