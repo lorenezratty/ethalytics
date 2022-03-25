@@ -43,7 +43,7 @@ final as (
 
     select
         known_addresses.*,
-        balances.ethereum_balance as current_balance_in_ethereum,
+        balances.balance_in_eth as current_balance_in_ethereum,
         receiving_transactions.num_of_receiving_transactions,
         receiving_transactions.total_value_received,
         sending_transactions.num_of_sent_transactions,
