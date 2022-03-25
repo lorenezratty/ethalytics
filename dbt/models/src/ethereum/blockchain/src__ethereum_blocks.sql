@@ -32,7 +32,7 @@ rename as (
         parent_hash                             as parent_hash,
 
         -- METADATA
-        datetime(timestamp, 'American/Los Angeles')  as block_created_at
+        datetime(timestamp, 'American/Los_Angeles')  as block_created_at
 
     from source
 

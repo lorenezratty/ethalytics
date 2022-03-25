@@ -19,7 +19,7 @@ rename as (
         start_trace_id                                          as trace_id,
 
         -- METADATA
-        datetime(start_block_timestamp, 'American/Los Angeles') as start_block_timestamp
+        datetime(start_block_timestamp, 'American/Los_Angeles') as start_block_timestamp
 
     from source
 
