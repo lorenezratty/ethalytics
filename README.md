@@ -6,4 +6,4 @@ Ethalytics is an open source dbt project used to run analytics against the Ether
 ## How to use Ethalytics
 Using Ethalytics is quite easy. In order to run this dbt project you should be familiar with Google BigQuery, and dbt.
 
-If you know how to use dbt, simply pull or fork this repo, wire yourself into a new schema on your BigQuery instance and you can build right away. These models consider using the `crypto_ethereum` public dataset.
+If you know how to use dbt, simply clone or fork this repo, wire yourself into a new schema on your BigQuery instance and you can build right away. These models consider using the `crypto_ethereum` public dataset.
