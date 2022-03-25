@@ -11,7 +11,7 @@ rename as (
         address                             as ethereum_address,
 
         -- ADDITIONAL ATTRIBUTES
-        eth_balance / 1000000000000000000   as ethereum_balance
+        eth_balance / 1000000000000000000   as balance_in_eth
 
     from source
 
