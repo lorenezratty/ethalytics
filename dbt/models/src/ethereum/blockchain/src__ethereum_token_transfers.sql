@@ -22,7 +22,7 @@ rename as (
         block_number                                            as block_number,
 
         -- METADATA
-        datetime(block_timestamp, 'American/Los_Angeles')       as created_at
+        datetime(block_timestamp, 'America/Los_Angeles')       as created_at
 
     from source
 
