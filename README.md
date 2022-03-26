@@ -10,6 +10,8 @@ If you know how to use dbt, simply clone or fork this repo, wire yourself into a
 
 ## Expected Upgrades to the Project
 
+- dbt testing
+- dbt documentation
 - Update and upgrade the Ethalytics installation guide
 - Bring in Github data
 - Bring in Hacker News data
@@ -18,4 +20,4 @@ If you know how to use dbt, simply clone or fork this repo, wire yourself into a
 
 ## Want to contribute?
 
-Feel free to send PRs or make comments. This is something I work on in my free time, so I appreciate any help the community is willing to put towards the proejct. Cheers.
+Feel free to send PRs or make comments. This is something I work on in my free time, so I appreciate any help the community is willing to put towards the project. Cheers.
