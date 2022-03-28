@@ -167,7 +167,7 @@ final as (
 
         -- ADDITIONAL ATTRIBUTES
         traces_agg.avg_gas_limit                                as avg_gas_limit,
-        transactions_agg.avg_perc_gas_limit_used                as avg_perc_gas_limit_used,,
+        transactions_agg.avg_perc_gas_limit_used                as avg_perc_gas_limit_used,
         transactions_agg.avg_transaction_gas_in_gwei            as avg_transaction_gas_in_gwei,
         transactions_agg.avg_receiving_num_erc20_contracts      as avg_receiving_num_erc20_contracts,
         transactions_agg.avg_receiving_num_erc721_contracts     as avg_receiving_num_erc721_contracts,
