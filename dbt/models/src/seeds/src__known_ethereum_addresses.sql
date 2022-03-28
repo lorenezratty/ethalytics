@@ -1,6 +1,6 @@
 with source as (
 
-    select * from {{ ref('known_eth_addresses') }}
+    select * from {{ ref('seed_known_eth_addresses') }}
 
 ),
 

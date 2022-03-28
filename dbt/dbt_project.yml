@@ -45,7 +45,7 @@ seeds:
   ethalytics:
     +enabled: true
     +schema: seed_data
-    known_eth_addresses:
+    seed_known_eth_addresses:
       +column_types:
         id: integer
         address: string
