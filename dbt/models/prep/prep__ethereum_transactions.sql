@@ -4,8 +4,8 @@ transactions as (
 
     select
         *,
-        {{ dbt_utils.surrogate_key(['block_hash', 'from_ethereum_address']) }}  as from_surrogate_transaction_key,
-        {{ dbt_utils.surrogate_key(['block_hash', 'to_ethereum_address']) }}    as to_surrogate_transaction_key
+        block_hash || from_ethereum_address as from_surrogate_transaction_key,
+        block_hash || to_ethereum_address   as to_surrogate_transaction_key
 
     from {{ ref('src__ethereum_transactions') }}
 
