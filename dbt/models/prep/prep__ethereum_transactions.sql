@@ -1,3 +1,14 @@
+{{
+    config(
+        unique_key='transaction_hash',
+        partition_by={
+          "field": "created_at_pt",
+          "data_type": "timestamp",
+          "granularity": "day"
+        }
+    )
+}}
+
 with
 
 transactions as (
@@ -76,7 +87,7 @@ final as (
         to_surrogate_transaction_key,
 
         -- METADATA
-        created_at
+        created_at_pt
 
     from transactions
 

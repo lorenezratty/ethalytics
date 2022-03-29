@@ -15,14 +15,14 @@ rename as (
         -- ADDITIONAL ATTRIBUTES
         log_index                                               as log_index,
         transaction_hash                                        as transaction_hash,
-        cast(trim(value) as bignumeric) / 1000000000000000000   as value_in_ethereum,
+        cast(trim(value) as numeric) / 1000000000000000000      as value_in_ethereum,
 
         -- FOREIGN KEYS
         block_hash                                              as block_hash,
         block_number                                            as block_number,
 
         -- METADATA
-        datetime(block_timestamp, 'America/Los_Angeles')       as created_at
+        datetime(block_timestamp, 'America/Los_Angeles')        as created_at_pt
 
     from source
 

@@ -19,7 +19,7 @@ rename as (
         is_erc721                                           as is_erc721,
 
         -- FOREIGN KEYS
-        datetime(block_timestamp, 'America/Los_Angeles')   as block_created_at
+        datetime(block_timestamp, 'America/Los_Angeles')    as created_at_pt
 
     from source
 

@@ -22,7 +22,7 @@ rename as (
         transaction_hash                                    as transaction_hash,
 
         -- METADATA
-        datetime(block_timestamp, 'America/Los_Angeles')   as block_created_at
+        datetime(block_timestamp, 'America/Los_Angeles')    as created_at_pt
 
     from source
 

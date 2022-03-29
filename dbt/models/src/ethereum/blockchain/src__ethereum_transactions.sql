@@ -36,7 +36,7 @@ rename as (
         to_address                                          as to_ethereum_address,
 
         -- METADATA
-        datetime(block_timestamp, 'America/Los_Angeles')   as created_at
+        datetime(block_timestamp, 'America/Los_Angeles')    as created_at_pt
 
     from source
 

@@ -24,7 +24,7 @@ final as (
         block_hash || ethereum_address  as surrogate_transaction_key,
 
         -- METADATA
-        contracts.block_created_at      as block_created_at
+        contracts.created_at_pt      as created_at_pt
 
     from contracts
 
