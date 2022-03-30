@@ -223,7 +223,7 @@ final as (
         {# transactions_agg.min_transaction_gas_price_in_eth       as min_transaction_gas_price_in_eth, #}
         {# transactions_agg.min_transaction_gas_price_in_gwei      as min_transaction_gas_price_in_gwei, #}
         blocks.nonce                                            as nonce,
-        {# contracts_agg.num_contracts                             as num_contracts, #}
+        contracts_agg.num_contracts                             as num_contracts,
         {# contracts_agg.num_erc_20                                as num_erc_20, #}
         {# contracts_agg.num_erc_721                               as num_erc_721, #}
         {# logs_agg.num_logs                                       as num_logs, #}
@@ -252,10 +252,10 @@ final as (
         blocks.created_at_pt                                    as created_at_pt
 
     from blocks
-    left join tokens_agg            using (block_hash)
+    left join contracts_agg         using (block_hash)
     left join transactions_agg      using (block_hash)
+    left join tokens_agg            using (block_hash)
     {# left join traces_agg            using (block_hash) #}
-    {# left join contracts_agg         using (block_hash) #}
     {# left join logs_agg              using (block_hash) #}
     {# left join token_transfers_agg   using (block_hash) #}
 

@@ -25,7 +25,7 @@ select * from {{ ref('prep__ethereum_blocks') }}
   If you're testing around, consider using a where to a specific date. This should help with
   processing enormous amounts of data.
  #}
-{# where date(created_at_pt) = "2022-03-28" #}
+{# where date(created_at_pt) > date(datetime(current_timestamp(), 'America/Los_Angeles') - interval 3 day) #}
 
 {% if is_incremental() %}
 
