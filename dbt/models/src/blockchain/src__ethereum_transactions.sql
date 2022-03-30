@@ -1,3 +1,15 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='transaction_hash',
+        partition_by={
+          "field": "created_at_pt",
+          "data_type": "timestamp",
+          "granularity": "day"
+        }
+    )
+}}
+
 with source as (
 
     select * from {{ source('public_bigquery', 'ethereum_transactions') }}
@@ -43,3 +55,9 @@ rename as (
 )
 
 select * from rename
+
+{% if is_incremental() %}
+
+  where created_at_pt > (select max(created_at_pt) from {{ this }})
+
+{% endif %}

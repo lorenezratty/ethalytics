@@ -23,6 +23,13 @@ with
 blocks as (
 
     select * from {{ ref('src__ethereum_blocks') }}
+
+    {% if is_incremental() %}
+
+    where created_at_pt > (select max(created_at_pt) from {{ this }})
+
+    {% endif %}
+
     order by created_at_pt desc
 
 ),

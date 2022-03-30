@@ -1,5 +1,6 @@
 {{
     config(
+        materialized='incremental',
         unique_key='transaction_hash',
         partition_by={
           "field": "created_at_pt",
@@ -19,6 +20,12 @@ transactions as (
         block_hash || to_ethereum_address   as to_surrogate_transaction_key
 
     from {{ ref('src__ethereum_transactions') }}
+
+    {% if is_incremental() %}
+
+    where created_at_pt > (select max(created_at_pt) from {{ this }})
+
+    {% endif %}
 
 ),
 
