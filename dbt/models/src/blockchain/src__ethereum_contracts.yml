@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: src__ethereum_contracts
+    description: "Contracts that are on the ethereum blockchain"
+    columns:
+      - name: block_hash
+        description: "{{ doc('block_hash') }}"
+
+      - name: block_number
+        description: "{{ doc('block_number') }}"
+
+      - name: ethereum_address
+        description: "{{ doc('ethereum_address') }}"
+
+      - name: bytecode
+        description: ""
+
+      - name: function_sighashes
+        description: ""
+
+      - name: is_erc20
+        description: "Is an ERC20 contract"
+
+      - name: is_erc721
+        description: "Is an ERC721 contract"
+
+      - name: created_at_pt
+        description: "{{ doc('created_at_pt') }}"

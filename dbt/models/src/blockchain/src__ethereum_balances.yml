@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: src__ethereum_balances
+    description: "The current balances of ethereum addresses"
+    columns:
+      - name: ethereum_address
+        description: "{{ doc('ethereum_address') }}"
+
+      - name: balance_in_eth
+        description: "The balance of an ethereum address in units of ETH"

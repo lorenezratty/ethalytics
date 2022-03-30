@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: src__ethereum_blocks
+    description: "The blocks created by proof of work of the ethereum blockchain"
+    columns:
+      - name: block_hash
+        description: "{{ doc('block_hash') }}"
+
+      - name: block_number
+        description: "{{ doc('block_number') }}"
+
+      - name: base_fee_per_gas
+        description: "The base fee set per gas that is used"
+
+      - name: difficulty_in_th
+        description: "The mining difficulty in terahash"
+
+      - name: extra_data
+        description: ""
+
+      - name: gas_limit
+        description: "{{ doc('gas_limit') }}"
+
+      - name: gas_used
+        description: "{{ doc('gas_used') }}"
+
+      - name: logs_bloom
+        description: ""
+
+      - name: nonce
+        description: "{{ doc('nonce') }}"
+
+      - name: sha3_uncles
+        description: ""
+
+      - name: size_in_bytes
+        description: "The size of the block in bytes"
+
+      - name: state_root
+        description: ""
+
+      - name: receipts_root
+        description: ""
+
+      - name: transaction_count
+        description: "The number of transactions in the block"
+
+      - name: transactions_root
+        description: ""
+
+      - name: total_difficulty_in_th
+        description: "The total difficulty of the block in terahash"
+
+      - name: miner_ethereum_address
+        description: "The ethereum address rewarded for mining the block"
+
+      - name: parent_hash
+        description: ""
+
+      - name: created_at_pt
+        description: "{{ doc('created_at_pt') }}"

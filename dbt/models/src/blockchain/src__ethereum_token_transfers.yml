@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: src__ethereum_token_transfers
+    description: ""
+    columns:
+      - name: token_ethereum_address
+        description: "The ethereum address of the issuing token"
+
+      - name: from_ethereum_address
+        description: "{{ doc('from_ethereum_address') }}"
+
+      - name: to_ethereum_address
+        description: "{{ doc('to_ethereum_address') }}"
+
+      - name: log_index
+        description: ""
+
+      - name: transaction_hash
+        description: "{{ doc('transaction_hash') }}"
+
+      - name: value_in_ethereum
+        description: "The value of a token transfer in units of ETH"
+
+      - name: block_hash
+        description: "{{ doc('block_hash') }}"
+
+      - name: block_number
+        description: "{{ doc('block_number') }}"
+
+      - name: created_at_pt
+        description: "{{ doc('created_at_pt') }}"

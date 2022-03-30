@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: src__known_ethereum_addresses
+    description: "A list of known ethereum addresses and their owners"
+    columns:
+      - name: known_address_id
+        description: "The unique sequential id for known ethereum addresses"
+
+      - name: ethereum_address
+        description: "{{ doc('ethereum_address') }}"
+
+      - name: address_owner_name
+        description: "The name of the owner of the provided ethereum address"

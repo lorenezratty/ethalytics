@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: src__ethereum_traces
+    description: ""
+    columns:
+      - name: trace_id
+        description: ""
+
+      - name: call_type
+        description: ""
+
+      - name: error
+        description: ""
+
+      - name: gas_limit
+        description: "{{ doc('gas_limit') }}"
+
+      - name: gas_used
+        description: "{{ doc('gas_used') }}"
+
+      - name: input
+        description: ""
+
+      - name: output
+        description: ""
+
+      - name: reward_type
+        description: ""
+
+      - name: status
+        description: ""
+
+      - name: subtraces
+        description: ""
+
+      - name: trace_address
+        description: ""
+
+      - name: trace_type
+        description: ""
+
+      - name: value_transferred
+        description: ""
+
+      - name: block_number
+        description: "{{ doc('block_number') }}"
+
+      - name: block_hash
+        description: "{{ doc('block_hash') }}"
+
+      - name: from_ethereum_address
+        description: "{{ doc('from_ethereum_address') }}"
+
+      - name: transaction_hash
+        description: "{{ doc('transaction_hash') }}"
+
+      - name: transaction_index
+        description: "{{ doc('transaction_index') }}"
+
+      - name: to_ethereum_address
+        description: "{{ doc('to_ethereum_address') }}"
+
+      - name: created_at_pt
+        description: "{{ doc('created_at_pt') }}"

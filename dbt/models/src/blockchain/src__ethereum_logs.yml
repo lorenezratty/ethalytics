@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: src__ethereum_logs
+    description: ""
+    columns:
+      - name: log_index
+        description: ""
+
+      - name: data
+        description: ""
+
+      - name: topics
+        description: ""
+
+      - name: transaction_index
+        description: "{{ doc('transaction_index') }}"
+
+      - name: block_hash
+        description: "{{ doc('block_hash') }}"
+
+      - name: block_number
+        description: "{{ doc('block_number') }}"
+
+      - name: ethereum_address
+        description: "{{ doc('ethereum_address') }}"
+
+      - name: transaction_hash
+        description: "{{ doc('transaction_hash') }}"
+
+      - name: created_at_pt
+        description: "{{ doc('created_at_pt') }}"

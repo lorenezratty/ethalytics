@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: src__ethereum_sessions
+    description: ""
+    columns:
+      - name: session_id
+        description: ""
+
+      - name: start_block_number
+        description: ""
+
+      - name: contract_address
+        description: ""
+
+      - name: ethereum_address
+        description: "{{ doc('ethereum_address') }}"
+
+      - name: trace_id
+        description: ""
+
+      - name: start_block_timestamp
+        description: ""

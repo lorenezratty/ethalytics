@@ -5,10 +5,10 @@ models:
     description: "A set list of identified tokens"
     columns:
       - name: ethereum_address
-        description: {{ doc('ethereum_address') }}
+        description: "{{ doc('ethereum_address') }}"
 
       - name: token_symbol
-        description: {{ doc('token_symbol') }}
+        description: "{{ doc('token_symbol') }}"
 
       - name: num_token_decimals
-        description: {{ doc('num_token_decimals') }}
+        description: "{{ doc('num_token_decimals') }}"

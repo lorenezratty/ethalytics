@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: src__ethereum_tokens
+    description: ""
+    columns:
+      - name: token_name
+        description: "The name of the issuing token"
+
+      - name: token_symbol
+        description: "{{ doc('token_symbol') }}"
+
+      - name: num_token_decimals
+        description: "{{ doc('num_token_decimals') }}"
+
+      - name: total_supply
+        description: "The total supply available for the issuing token"
+
+      - name: block_hash
+        description: "{{ doc('block_hash') }}"
+
+      - name: block_number
+        description: "{{ doc('block_number') }}"
+
+      - name: ethereum_address
+        description: "{{ doc('ethereum_address') }}"
+
+      - name: created_at_pt
+        description: "{{ doc('created_at_pt') }}"
